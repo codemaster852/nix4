@@ -1,0 +1,21 @@
+workflows:
+  build-release:
+    name: Build Release APK
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      vars:
+        LONGCAT_API_KEY: "ak_2rU1Lo7PA23X5Is9wm3m69EY2T37J" # Your API key
+      xcode: latest
+    scripts:
+      - name: Install dependencies
+        script: |
+          flutter pub get
+      - name: Run tests (optional)
+        script: |
+          flutter test
+      - name: Build APK
+        script: |
+          flutter build apk --release
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
