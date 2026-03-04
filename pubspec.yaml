@@ -1,4 +1,18 @@
+name: nix4_app
+description: A Flutter Q&A app
+publish_to: 'none'
+
+environment:
+  sdk: ">=3.11.0 <4.0.0"
+
 dependencies:
   flutter:
     sdk: flutter
   http: ^0.14.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
